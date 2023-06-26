@@ -1,23 +1,23 @@
-# <%= title %> Format
+# UNHCR Quarto HTML document template
+
+A [Quarto](https://quarto.org/) extension to create [UNHCR branded](https://www.unhcr.org/brand) `HTML` document.
 
 ## Installing
 
-*TODO*: Replace the `<github-organization>` with your GitHub organization.
+To start a new `HTML` document:
 
 ```bash
-quarto use template <github-organization>/<%= filesafename %>
+quarto use template unhcr-dataviz/quarto-html-unhcr
 ```
 
 This will install the extension and create an example qmd file that you can use as a starting place for your article.
 
-## Using
+## Documentation
 
-*TODO*: Describe how to use your format.
-
-## Format Options
-
-*TODO*: If your format has options that can be set via document metadata, describe them.
+Read the [Quarto documentation on HTML documents](https://quarto.org/docs/output-formats/html-basics.html)
 
 ## Example
+
+_TODO_
 
 Here is the source code for a minimal sample document: [example.qmd](example.qmd).
