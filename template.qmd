@@ -5,11 +5,159 @@ author: Cedric Vidonne
 date: last-modified
 ---
 
-## Introduction
+## Typography
 
-*TODO* Create an example file that demonstrates the formatting and features of your format.
+Documentation and examples of basic text elements.
 
-## More Information
+### Headings
 
-You can learn more about controlling the appearance of HTML output here: <https://quarto.org/docs/output-formats/html-basics.html>
+# Heading 1 {.unnumbered .unlisted}
 
+## Heading 2 {.unnumbered .unlisted}
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+### Lead {.listed}
+
+:::{.lead}
+This is a lead paragraph. It stands out from regular paragraphs.
+:::
+
+### Inline text elements
+
+You can use the mark tag to [highlight]{.mark} text.
+
+~~This line of text is meant to be treated as deleted text.~~
+
+<u>This line of text will render as underlined.</u>
+
+[This line of text is meant to be treated as fine print.]{.small}
+
+**This line rendered as bold text.**
+
+*This line rendered as italicized text.*
+
+***This line rendered as bold and italic text.***
+
+`This line of text will render as inline code.`
+
+This is a footnote^[text of the footnote]
+
+Abbreviations: <abbr title="The United Nations High Commissioner for Refugees">UNHCR</abbr>
+
+### Links
+
+<https://quarto.org>
+
+[Quarto](https://quarto.org)
+
+### Lists
+
+* unordered list
+    + sub-item 1
+    + sub-item 2
+        - sub-sub-item 1
+
+1. ordered list
+2. item 2
+    i) sub-item 1
+         A.  sub-sub-item 1
+
+### Blockquote
+
+> Simple blockquote from an important person
+
+> Complex blockquote
+> 
+> from an important person
+
+### Text color
+
+[.text-primary]{.text-primary}
+
+[.text-secondary]{.text-secondary}
+
+[.text-success]{.text-success}
+
+[.text-danger]{.text-danger}
+
+[.text-warning]{.text-warning}
+
+[.text-info]{.text-info}
+
+:::{.bg-dark}
+[.text-light]{.text-light}
+:::
+
+[.text-dark]{.text-dark}
+
+## Buttons
+
+```{=html}
+<p>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-light">Light</button>
+  <button type="button" class="btn btn-dark">Dark</button>
+  
+  <button type="button" class="btn btn-link">Link</button>
+</p>
+<p>
+  <button type="button" class="btn btn-outline-primary">Primary</button>
+  <button type="button" class="btn btn-outline-secondary">Secondary</button>
+  <button type="button" class="btn btn-outline-success">Success</button>
+  <button type="button" class="btn btn-outline-danger">Danger</button>
+  <button type="button" class="btn btn-outline-warning">Warning</button>
+  <button type="button" class="btn btn-outline-info">Info</button>
+  <button type="button" class="btn btn-outline-light">Light</button>
+  <button type="button" class="btn btn-outline-dark">Dark</button>
+</p>
+```
+
+## Tables
+
+## Source code
+
+```{r}
+#| echo: true
+#| eval: false
+library(tidyverse)
+library(unhcrthemes)
+
+data(idp, package = "unhcrthemes")
+
+idp_total <- idp |>
+  group_by(year) |>
+  summarise(idp = sum(idp, na.rm = TRUE) / 1e6) |>
+  ungroup()
+
+
+```
+
+## Callout Blocks
+
+::: {.callout-note}
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+::: {.callout-warning}
+Callouts provide a simple way to attract attention, for example, to this warning.
+:::
+
+::: {.callout-important}
+Danger, callouts will really improve your writing.
+:::
+
+::: {.callout-tip}
+This is an example of a callout with a caption.
+:::
