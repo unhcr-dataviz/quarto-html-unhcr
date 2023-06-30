@@ -1,21 +1,73 @@
 ---
-title: Untitled
+title: UNHCR Quarto Document
+subtitle: Create UNHCR branded HTML article
+date: today
+author: Cédric Vidonne
 format: unhcr-html
-author: Cedric Vidonne
-date: last-modified
 ---
+
+## Quarto HTML document
+
+:::{.lead}
+Create stunning [UNHCR branded](https://www.unhcr.org/brand) HTML document mixing text, images, tables, plots, code and more, directly with this template. 
+:::
+
+As with the other UNHCR Quarto extensions, the underlying document syntax is `markdown`. You can find all the information on authoring documents with Quarto [here](https://quarto.org/docs/authoring/markdown-basics.html). You can find more specific information on [figures](https://quarto.org/docs/authoring/figures.html) and [tables](https://quarto.org/docs/authoring/tables.html).
+
+### UNHCR HTML Template
+
+The `unhcr-html` Quarto template comes with predefined styles and components but Quarto is extremely flexible and, depending on your needs, you can modify many aspects directly from the document `YAML` or by simply using `CSS` classes. We recommend you stick with the default options but look at the reference below to know more about what you can do with Quarto.
+
+Refer to the Quarto guide for [HTML document](https://quarto.org/docs/output-formats/html-basics.html) or the complete [HTML format reference](https://quarto.org/docs/reference/formats/html.html) for more information.
+
+#### Title box
+
+[_TODO_ add explanation on the different style]{.text-danger}
+
+#### Table of content
+
+[_TODO_ add explanation on TOC]{.text-danger}
 
 ## Typography
 
-Documentation and examples of basic text elements.
+In this section, we will show the basic usage of the template on how to make UNHCR branded HTML document but as Quarto is using [Bootstrap](https://getbootstrap.com/), almost all the functionalities of the framework are available to you. Please, refer to the offical [Bootstrap documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/) to see what you can do with some simple `CSS` classes.
+
+You can add classes, attributes, and other identifiers to regions of content using Divs and Spans.
+
+For example, here we add the `{.bg-primary}` class to a region of content using a div (`:::`):
+
+```{markdown}
+::: {.bg-primary}
+This content will be styled with a UNHCR blue background
+:::
+```
+
+You can achieve the same at the `span` level with inline styling. For example:
+
+```{markdown}
+This is normal text but [this text will be in UNHCR blue]{.text-primary}.
+```
+
+Check the Quarto documention on [Divs and Spans](https://quarto.org/docs/authoring/markdown-basics.html#divs-and-spans) for more information and examples.
 
 ### Headings
 
-# Heading 1 {.unnumbered .unlisted}
+Simply use the `markdown` notation for headings `#` to create your content structure. For example:
 
-## Heading 2 {.unnumbered .unlisted}
-
+```{markdown}
+# Heading 1
+## Heading 2
 ### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+```
+
+[Heading 1]{.h1}
+
+[Heading 2]{.h2}
+
+[Heading 3]{.h3}
 
 #### Heading 4
 
@@ -23,41 +75,93 @@ Documentation and examples of basic text elements.
 
 ###### Heading 6
 
-### Lead {.listed}
+### Inline text
+
+Simply use the `markdown` built-in notation to format your content. For example:
+
+```{markdown}
+*This line will render as italicized text.*
+
+**This line will render as bold text.**
+
+***This line will render as bold and italic text.***
+
+`This line will render as inline code.`
+
+~~This line will be strikethrough.~~
+
+This line will include a [link to UNHCR webpage](https://www.unhcr.org/)
+```
+
+*This line will render as italicized text.*
+
+**This line will render as bold text.**
+
+***This line will render as bold and italic text.***
+
+`This line will render as inline code.`
+
+~~This line will be strikethrough.~~
+
+This line will include a [link to UNHCR webpage](https://www.unhcr.org/)
+
+Not all the formatting can be achieved with `markdown` only, but Quarto understands `HTML` so extra styling can be perfomed by directly entering `HTML` code in your Quarto document. For example:
+
+```{markdown}
+<u>This line of text will render as underlined.</u>
+```
+
+<u>This line of text will render as underlined.</u>
+
+The template also includes some `CSS` classes to help with formating. For example:
+
+```{markdown}
+:::{.lead}
+This is a lead paragraph. It stands out from regular paragraphs.
+:::
+
+You can use the mark class to [highlight]{.mark} text.
+
+[This line of text is meant to be treated as fine print.]{.small}
+```
 
 :::{.lead}
 This is a lead paragraph. It stands out from regular paragraphs.
 :::
 
-### Inline text elements
-
-You can use the mark tag to [highlight]{.mark} text.
-
-~~This line of text is meant to be treated as deleted text.~~
-
-<u>This line of text will render as underlined.</u>
+You can use the mark class to [highlight]{.mark} text.
 
 [This line of text is meant to be treated as fine print.]{.small}
 
-**This line rendered as bold text.**
+Useful for UNHCR document you can also create **footnotes** and **abbreviations** with the following code:
 
-*This line rendered as italicized text.*
+```{markdown}
+This is a footnote^[Text of the footnote]
 
-***This line rendered as bold and italic text.***
+<abbr title="The United Nations High Commissioner for Refugees">UNHCR</abbr>
+```
 
-`This line of text will render as inline code.`
+This is a footnote^[Text of the footnote]
 
-This is a footnote^[text of the footnote]
+<abbr title="The United Nations High Commissioner for Refugees">UNHCR</abbr>
 
-Abbreviations: <abbr title="The United Nations High Commissioner for Refugees">UNHCR</abbr>
-
-### Links
-
-<https://quarto.org>
-
-[Quarto](https://quarto.org)
+For more examples and options, check the [Bootstrap documentation on typography](https://getbootstrap.com/docs/5.3/content/typography/).
 
 ### Lists
+
+The template comes with stylized lists, simply create them using `markdown` notation. For examples:
+
+```{markdown}
+* unordered list
+    + sub-item 1
+    + sub-item 2
+        - sub-sub-item 1
+
+1. ordered list
+2. item 2
+    i) sub-item 1
+         A.  sub-sub-item 1
+```
 
 * unordered list
     + sub-item 1
@@ -71,66 +175,124 @@ Abbreviations: <abbr title="The United Nations High Commissioner for Refugees">U
 
 ### Blockquote
 
-> Simple blockquote from an important person
+[_TODO_ stylize blockquote]{.text-danger}
 
-> Complex blockquote
-> 
-> from an important person
+Blockquote can be achieved with `markdown` using the `>` notation. To keep quote together, blank lines inside the quote must contain the `>` character. For examples
 
-### Text color
+```{markdown}
+> A simple blockquote
 
-[.text-primary]{.text-primary}
+> A blockquote with source
+>
+> From an important person
+```
 
-[.text-secondary]{.text-secondary}
+> A simple blockquote
 
-[.text-success]{.text-success}
+> A blockquote with source
+>
+> From an important person
 
-[.text-danger]{.text-danger}
+### Callout blocks
 
-[.text-warning]{.text-warning}
+Callout blocks can be helpful to attract reader's attention. Please review the [Quarto article on callouts](https://quarto.org/docs/authoring/callouts.html) for more information. Below an example of a `note` callout.
 
-[.text-info]{.text-info}
+```{markdown}
+::: {.callout-note}
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
 
-:::{.bg-dark}
-[.text-light]{.text-light}
+And their style can be changed further with the `appearance` attribute.
+:::
+```
+
+::: {.callout-note}
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+
+And their style can be changed further with the `appearance` attribute.
 :::
 
-[.text-dark]{.text-dark}
+### Buttons
 
-## Buttons
+`Markdown` doesn't include any notation for buttons, simply use `HTML` and some `CSS` classes to create UNHCR branded buttons. For example:
 
-```{=html}
+```{markdown}
 <p>
   <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-secondary">Secondary</button>
-  <button type="button" class="btn btn-success">Success</button>
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-warning">Warning</button>
-  <button type="button" class="btn btn-info">Info</button>
-  <button type="button" class="btn btn-light">Light</button>
-  <button type="button" class="btn btn-dark">Dark</button>
-  
-  <button type="button" class="btn btn-link">Link</button>
-</p>
-<p>
-  <button type="button" class="btn btn-outline-primary">Primary</button>
-  <button type="button" class="btn btn-outline-secondary">Secondary</button>
-  <button type="button" class="btn btn-outline-success">Success</button>
-  <button type="button" class="btn btn-outline-danger">Danger</button>
-  <button type="button" class="btn btn-outline-warning">Warning</button>
-  <button type="button" class="btn btn-outline-info">Info</button>
-  <button type="button" class="btn btn-outline-light">Light</button>
   <button type="button" class="btn btn-outline-dark">Dark</button>
 </p>
 ```
 
-## Tables
+<p>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-outline-dark">Dark</button>
+</p>
+
+Review [Bootstrap documentation on buttons](https://getbootstrap.com/docs/5.3/components/buttons/) for more information.
+
+## Colors
+
+Bootstrap comes with an extensive set of color helper classes for [text](https://getbootstrap.com/docs/5.3/utilities/colors/), [background](https://getbootstrap.com/docs/5.3/utilities/background/) and even [buttons](https://getbootstrap.com/docs/5.3/components/buttons/) as seen above. Nevertheless, we would recommend, you keep your document as simple as possible and stick to the `{primary}` and `{secondary}` color palettes of bootstrap.
+
+To change the color, simply apply a specific `CSS` class to the desired element. For text and background, it starts with `{.text}` or `{.bg}` followed by the color name in bootstrap like `{-primary}`, `{-secondary}`, `{-warning}` and more.
+
+Keep in mind that not all the text and background will work together and that you might need to tweak the element separately to make sure it is readable.
+
+### Text color
+
+For example, to add some UNHCR blue text to your content use the following code example:
+
+```{markdown}
+This my body text followed by [UNHCR blue]{.text-primary} text.
+```
+
+This my body text followed by [UNHCR blue]{.text-primary} text.
+
+### Background color
+
+As mentioned, adding a specific background color works exactly the same way as the text color. The main difference though is that usually background color will be applied on fenced `divs` but all the `CSS` classes work regardless of it's application to a `span` or a `div`.
+
+Just be careful to apply some coloring to the text if the contrast between the text and the background isn't sufficient and be mindful of the potential `padding` and `margin` needed.
+
+For example, to create a UNHCR blue box with white text use the following code example:
+
+```{markdown}
+::: {.bg-primary .text-white .p-3}
+A UNHCR blue box with white text and some padding for readability.
+:::
+```
+
+::: {.bg-primary .text-white .p-3}
+A UNHCR blue box with white text and some padding for readability.
+:::
 
 ## Source code
 
-```{r}
+To include code, use fenced code blocks with a language specifier. By default the `echo` parameter of code block is set to true, turn it to `false` to hide the code in the document.
+
+```{markdown}
 #| echo: true
-#| eval: false
+
+\```{r}
+#| echo: true
+#| warning: false
+library(tidyverse)
+library(unhcrthemes)
+\```
+
+```
+
+There are wide variety of options available to customize the display of source code within HTML documents, check the [Quarto documentation](https://quarto.org/docs/output-formats/html-code.html) for more information.
+
+## Plots
+
+Use the [`{unhcrthemes}`](https://vidonne.github.io/unhcrthemes/) package to produce UNHCR branded plots directly in the presentation. For example: 
+
+```{r}
+#| label: idp-plot
+#| warning: false
+#| echo: false
+#| fig-align: center
+
 library(tidyverse)
 library(unhcrthemes)
 
@@ -141,47 +303,92 @@ idp_total <- idp |>
   summarise(idp = sum(idp, na.rm = TRUE) / 1e6) |>
   ungroup()
 
-
+ggplot(idp_total) +
+  geom_col(aes(x = year, y = idp),
+           fill = unhcr_pal(n = 1, "pal_blue"),
+           width = 0.8) +
+  labs(title = "Globalement IDP displacement | 2010 - 2019",
+       y = "Number of people (in million)",
+       caption = "Source: UNHCR Refugee Data Finder") +
+  scale_y_continuous(expand = expansion(c(0, 0.1))) +
+  scale_x_continuous(breaks = seq(2010, 2019, 1)) +
+  theme_unhcr(font_size = 22, grid = "Y", axis_title = "y")
 ```
 
-## Callout Blocks
+## Tables
 
-::: {.callout-note}
-Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+[_TODO_ table examples include dynamic]{.text-danger}
+
+```{r}
+#| echo: false
+knitr::kable(head(iris))
+```
+
+## Layout
+
+Quarto supports a variety of page layout options that enable you to author content that:
+
+- Fills the main content region
+- Overflows the content region
+- Spans the entire page
+- Occupies the document margin
+
+We will cover the main fonctionalities here but you can find all the possible options directly on the [Quarto website](https://quarto.org/docs/authoring/article-layout.html).
+
+### Body column
+
+This is the default behaviour and where most of you content will live.
+
+:::{.column-body .bg-light .pt-3 .mb-3 .text-center}
+.column-body
 :::
 
-::: {.callout-tip}
-This is an example of a callout with a caption.
+If you want to apply different layout simply apply a specific CSS class. For example:
+
+```{markdown}
+:::{.column-body-outset}
+Outset content...
+:::
+```
+
+:::{.column-body-outset .bg-light .pt-3 .mb-3 .text-center}
+.column-body-outset
 :::
 
-::: {.callout-warning}
-Callouts provide a simple way to attract attention, for example, to this warning.
+### Page column
+
+If you need more space for your content, you can use the `.column-page` class. Content will extent on the size but nor the cover the whole screen yet.
+
+:::{.column-page .bg-light .pt-3 .mb-3 .text-center}
+.column-page
 :::
 
-::: {.callout-caution}
-Callouts provide a simple way to attract attention, for example, to this cauion block.
+Or a bit narrower with `.column-page-inset` class.
+
+:::{.column-page-inset .bg-light .pt-3 .mb-3 .text-center}
+.column-page-inset
 :::
 
-::: {.callout-important}
-Danger, callouts will really improve your writing.
+### Screen column
+
+For full width content, use the `.column-screen` class. The content will cover the full width of the screen with no margin.
+
+:::{.column-screen .bg-light .pt-3 .mb-3 .text-center}
+.column-screen
 :::
 
-### Appearance simple
+To keep the full width appearance but retain some margin, use the `.class-screen-inset` class.
 
-::: {.callout-note appearance="simple"}
-
-## Pay Attention
-
-Using callouts is an effective way to highlight content that your reader give special consideration or attention.
-
+:::{.column-screen-inset .bg-light .pt-3 .mb-3 .text-center}
+.column-screen-inset
 :::
 
-### Appearance minimal
+### Margin content
 
-::: {.callout-note appearance="minimal"}
+Some content can be placed within the right margin of the document (below the table of content). Like the columns it can be achieve with a css class. Use `.column-margin` to place content on the right side.
 
-## Pay Attention
-
-Using callouts is an effective way to highlight content that your reader give special consideration or attention.
-
+:::{.column-margin .bg-light .py-3 .text-center}
+.column-margin
 :::
+
+All the behaviours mentioned in this section can be applied to images, tables, plots, references and more. Visit the [Quarto page on layouts](https://quarto.org/docs/authoring/article-layout.html) for more information.
