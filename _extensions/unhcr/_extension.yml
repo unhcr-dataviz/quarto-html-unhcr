@@ -16,3 +16,4 @@ contributes:
             <link rel = "shortcut icon" href = "_extensions/unhcr/unhcr_favicon.svg" />
       include-after-body: footer.html
       smooth-scroll: true
+      date-format: "D MMMM YYYY"

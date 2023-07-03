@@ -45,6 +45,7 @@ $font-family-code: 'Source Code Pro', monospace;
 $headings-font-weight: 700;
 $headings-color: $unhcr-black;
 $code-color: $unhcr-red;
+$lead-font-weight: 400;
 
 
 // Link
@@ -81,9 +82,29 @@ li::marker {
     color: $unhcr-blue;
 }
 
-// blockquote {
-//     border-left: .25rem solid $unhcr-blue;
-// }
+blockquote {
+    border-left: none;
+    text-align: center;
+}
+
+.blockquote {
+    padding-left: 1.5rem;
+    color: $unhcr-black;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+blockquote p {
+    margin-bottom: 0;
+}
+
+blockquote p .blockquote-author {
+    color: $unhcr-darkgrey;
+    font-size: .875rem;
+    font-style: normal;
+    font-weight: 700;
+}
+
 
 .quarto-title-meta-heading,
 .abstract-title {

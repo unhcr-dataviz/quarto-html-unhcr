@@ -22,11 +22,28 @@ Refer to the Quarto guide for [HTML document](https://quarto.org/docs/output-for
 
 #### Title box
 
-[_TODO_ add explanation on the different style]{.text-danger}
+Some attributes of the `YAML` will be used to populate the top banner, such as the `title`, `date`, `author` and more. By default the banner is part of the other content flow and uses the default white background. You can turn it to a UNHCR blue banner, separated from the rest, by adding `title-block-banner: true` in the `YAML`. For example:
+
+```{yaml}
+---
+title: UNHCR Quarto Document
+subtitle: Create UNHCR branded HTML article
+date: today
+author: Cédric Vidonne
+format: unhcr-html
+title-block-banner: true
+---
+```
+
+Note that only the `title`, `subtitle` and `description` attribute will be added to the blue banner. The other parameters will keep their default styling. Find more information on the title blocks [here](https://quarto.org/docs/authoring/title-blocks.html#title-banners).
 
 #### Table of content
 
-[_TODO_ add explanation on TOC]{.text-danger}
+By default, the table of content is **visible**. Simply add `toc: false` to the `YAML` to hide the toc. You can find more information on toc and its settings [here](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents).
+
+#### Footer
+
+A footer including the UNHCR logo will be added at the bottom of the page automatically.
 
 ## Typography
 
@@ -175,23 +192,23 @@ The template comes with stylized lists, simply create them using `markdown` nota
 
 ### Blockquote
 
-[_TODO_ stylize blockquote]{.text-danger}
-
-Blockquote can be achieved with `markdown` using the `>` notation. To keep quote together, blank lines inside the quote must contain the `>` character. For examples
+Blockquote can be achieved with `markdown` using the `>` notation. To include a quote author, add a blank line with the `>` character and a line with the `>` character for the author itself. The `{.blockquote-author}` class **must** be added to the text for the credential. For example:
 
 ```{markdown}
-> A simple blockquote
+> "A simple blockquote"
 
-> A blockquote with source
+> "A blockquote with source"
 >
-> From an important person
+> [From an important person]{.blockquote-author}
 ```
 
-> A simple blockquote
+> "A simple blockquote"
 
-> A blockquote with source
+> "A blockquote with source"
 >
-> From an important person
+> [From an important person]{.blockquote-author}
+
+Note that the **\"** character has to be added manually, directly to the quote. 
 
 ### Callout blocks
 
@@ -261,7 +278,7 @@ A UNHCR blue box with white text and some padding for readability.
 :::
 ```
 
-::: {.bg-primary .text-white .p-3}
+::: {.bg-primary .text-white .px-3 .pt-3 .pb-1}
 A UNHCR blue box with white text and some padding for readability.
 :::
 
@@ -317,11 +334,16 @@ ggplot(idp_total) +
 
 ## Tables
 
-[_TODO_ table examples include dynamic]{.text-danger}
+Use the `knitr::kable()` function to insert simple already stylized tables. For example:
 
 ```{r}
-#| echo: false
-knitr::kable(head(iris))
+knitr::kable(head(idp))
+```
+
+Many packages can help you stylize tables, like [`{gt}`](https://gt.rstudio.com/), [`{DT}`](https://rstudio.github.io/DT/) and more. Some of them might be particularly useful for HTML document and, allow you to enable some user intereaction with the table. Below a `{DT}` example that creates a paginated searchable and sortable table:
+
+```{r}
+DT::datatable(idp)
 ```
 
 ## Layout

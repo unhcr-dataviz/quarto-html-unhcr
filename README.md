@@ -18,6 +18,4 @@ Read the [Quarto documentation on HTML documents](https://quarto.org/docs/output
 
 ## Example
 
-_TODO_
-
-Here is the source code for a minimal sample document: [example.qmd](example.qmd).
+Here is the [source code](template.qmd) and the [live example]() of the [template.qmd](template.qmd) file.
