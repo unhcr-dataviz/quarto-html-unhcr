@@ -4,7 +4,7 @@ A [Quarto](https://quarto.org/) extension to create [UNHCR branded](https://www.
 
 ## Installing
 
-Tu use the template, you need first to install the most recent version of [quarto (at last version 1)](https://quarto.org/docs/get-started/) - Note that if you are on Ubuntu, the default version on repo might not be the most recent one.
+Tu use the template, you need first to install the most recent version of [quarto (at least version 1)](https://quarto.org/docs/get-started/) - Note that if you are on Ubuntu, the default version on repo might not be the most recent one.
 
 To start a new `HTML` document, before creating your project on Rstudio, run in a regular terminal (not an R command):
 
