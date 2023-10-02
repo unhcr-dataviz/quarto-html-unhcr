@@ -34,4 +34,4 @@ Read the [Quarto documentation on HTML documents](https://quarto.org/docs/output
 
 ## Example
 
-Here is the [source code](template.qmd) and the [live example](https://unhcr-dataviz.github.io/quarto-html-unhcr/) of the [template.qmd](template.qmd) file.
+Here is the [source code](template.qmd) and the [live example](https://rstudio.unhcr.org/UNHCR_Quarto_Document/) of the [template.qmd](template.qmd) file.
